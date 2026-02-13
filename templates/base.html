@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>web os</title>
+        <title>web os - {% block title %}{% endblock %}</title>
         <style>
             html, body{
                 background-color: #1E3E62;
@@ -16,5 +17,7 @@
     </head>
     <body>
         <div class='nav'></div>
+        {% block content %}
+        {% endblock %}
     </body>
 </html>
