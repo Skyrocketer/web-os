@@ -1,11 +1,10 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import os
 #import stuff
 
 app = Flask(__name__)
-with open('venv/secret.txt', 'r') as f:
-    key = f.read()
-app.config['SECRET_KEY'] = key
+app.config['SECRET_KEY'] = os.urandom(32)
 socketio = SocketIO(app)
 #app stuff
 
