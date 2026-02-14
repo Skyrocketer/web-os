@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>web os - {% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="/static/future-floppy.ico">
         <style>
             html, body{
                 background-color: #1E3E62;
@@ -25,6 +26,10 @@
                 font-family: sans-serif;
                 border-bottom: 0.15em solid transparent; 
                 text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            a:hover{
+                color: #FF8A3D;
             }
             .active-link{
                 font-weight: bolder; 
@@ -33,16 +38,16 @@
             .content{
                 width: 100vw;
                 top: 8vh;
-                position: absolute;
+                position: relative;
             }
         </style>
     </head>
     <body>
         <div class='nav'>
             <a href="/" {% if request.endpoint == 'index' %} class='active-link' {% endif %}>Home</a>
-            <a href="/desktop.html" {% if request.endpoint == 'desktop' %} class='active-link' {% endif %}>desktop</a>
-            <a href="/login.html" {% if request.endpoint == 'login' %} class='active-link' {% endif %}>login</a>
-            <a href="/signup.html" {% if request.endpoint == 'signup' %} class='active-link' {% endif %}>signup</a>
+            <a href="/desktop.html" {% if request.endpoint == 'desktop' %} class='active-link' {% endif %}>Desktop</a>
+            <a href="/login.html" {% if request.endpoint == 'login' %} class='active-link' {% endif %}>Login</a>
+            <a href="/signup.html" {% if request.endpoint == 'signup' %} class='active-link' {% endif %}>Signup</a>
         </div>
         <div class="content">
             {% block content %}

@@ -18,6 +18,7 @@ def index():
 @app.errorhandler(404)
 def pageNotFound(error):
     return render_template('404.html'), 404
+#handle requests with no index
 
 if __name__ == '__main__':
     socketio.run(app)
