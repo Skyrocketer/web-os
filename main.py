@@ -4,7 +4,7 @@ from flask_socketio import SocketIO
 
 app = Flask(__name__)
 with open('venv/secret.txt', 'r') as f:
-    key = f.read().strip()
+    key = f.read()
 app.config['SECRET_KEY'] = key
 socketio = SocketIO(app)
 #app stuff
